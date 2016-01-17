@@ -2,8 +2,10 @@
 AWS Lambda Cart Micro Service - Serverless REST API's
 
 ## TODO LIST
+
 `adding aws cognito security aspect`
-`finish unit testing mocking dynamoDB locally`
+
+`add more unit testing mocking dynamoDB locally`
 
 ##Architecture
 
