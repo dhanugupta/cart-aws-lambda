@@ -1,6 +1,10 @@
 # cart-lambda
 AWS Lambda Cart Micro Service - Serverless REST API's
 
+## TODO LIST
+`adding aws cognito security aspect`
+`finish unit testing mocking dynamoDB locally`
+
 ##Architecture
 
 ![Architecture](https://github.com/dhanugupta/cart-aws-lambda/blob/master/aws-lambda-cart-microservice.png?raw=true)
