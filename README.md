@@ -37,7 +37,7 @@ Deployment
     2. All Lambda interactions are logged in Cloudwatch logs. View the logs for debugging. 
 
 2. The Lambda function handler tells Lambda what java method under `com.org.cart.router.RequestRouter` - 
-  ## lambdaHandler(InputStream request, OutputStream response, Context context) 
+  ` lambdaHandler(InputStream request, OutputStream response, Context context) `
 3. Review & create function. 
 
 ###API Gateway
@@ -84,7 +84,8 @@ Deployment
 
  More on [Intergration Requests](http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html).
  `$input.params()` parse the request object for the corresponding variable and allows the mapping template to build a JSON object. 
-    [Screenshot](https://github.com/dhanugupta/cart-aws-lambda/blob/master/aws-api-gateway-cart-REST.png?raw=true)  
+ 
+    <img src="https://github.com/dhanugupta/cart-aws-lambda/blob/master/aws-api-gateway-cart-REST.png?raw=true"/>  
 5.  Let's ensure the response is correct. Cart Micro Service will respond as  valid JSON.
 6. Lambda cannot return valid JSON Response.
 
