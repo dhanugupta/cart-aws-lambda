@@ -1,0 +1,15 @@
+// Code Quality - PMD
+
+apply plugin: "pmd"
+
+pmd {
+	ignoreFailures = true
+}
+
+tasks.withType(Pmd) {
+	reports {
+		xml.enabled = true
+		html.enabled = true
+	}
+}
+

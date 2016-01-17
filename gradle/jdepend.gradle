@@ -1,0 +1,7 @@
+// Code Quality - JDepend
+
+apply plugin: "jdepend"
+
+jdepend {
+	ignoreFailures = true
+}

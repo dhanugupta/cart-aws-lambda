@@ -1,0 +1,29 @@
+// Code Coverage
+
+apply plugin: "jacoco"
+
+test {
+	jacoco {
+		excludes = ["**/*Test.java com/aol/ecommerce/schema/*.java **/*JAXBDebug.java com/aol/cmi/application/*.java"]
+	}
+}
+
+task jacocoIntegrationTestReport(type: JacocoReport) {
+	sourceSets sourceSets.main
+	executionData integrationTest
+}
+
+integrationTest {
+	jacoco {
+		excludes = ["**/*Test.java com/aol/ecommerce/schema/*.java **/*JAXBDebug.java com/aol/cmi/application/*.java"]
+	}
+}
+
+jacocoTestReport.doFirst{
+	classDirectories = files('build/classes/main/com/aol/avocado')
+}
+
+jacocoIntegrationTestReport.doFirst{
+	classDirectories = files('build/classes/main/com/aol/avocado')
+}
+

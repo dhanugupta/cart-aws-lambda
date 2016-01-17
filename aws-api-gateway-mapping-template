@@ -1,0 +1,33 @@
+{
+  "body" : $input.json('$'),
+  "headers": {
+    #foreach($header in $input.params().header.keySet())
+    "$header": "$util.escapeJavaScript($input.params().header.get($header))" #if($foreach.hasNext),#end
+    
+    #end
+  },
+  "params": {
+    #foreach($param in $input.params().path.keySet())
+    "$param": "$util.escapeJavaScript($util.urlDecode($input.params().path.get($param)))" #if($foreach.hasNext),#end
+    
+    #endhjkyt
+  },
+  "query": {
+    #foreach($queryParam in $input.params().querystring.keySet())
+    "$queryParam": "$util.escapeJavaScript($util.urlDecode($input.params().querystring.get($queryParam)))" #if($foreach.hasNext),#end
+    #end
+  },
+  "stage" : "$context.stage",
+"requestId" : "$context.requestId",
+"apiId" : "$context.apiId",
+"resource-path" : "$context.resourcePath",
+"resourceId" : "$context.resourceId",
+"httpMethod" : "$context.httpMethod",
+"sourceIp" : "$context.identity.sourceIp",
+"userAgent" : "$context.identity.userAgent",
+"accountId" : "$context.identity.accountId",
+"apiKey" : "$context.identity.apiKey",
+"caller" : "$context.identity.caller",
+"user" : "$context.identity.user",
+"userArn" : "$context.identity.userArn"
+}

@@ -1,0 +1,35 @@
+configurations {
+    jaxb
+}
+
+dependencies {
+	// JAXB
+	jaxb 'com.sun.xml.bind:jaxb-xjc:2.2.4-1'
+}
+
+task jaxb () {
+    // output directory
+    def jaxbTargetDir = file( "${buildDir}/generated-src" )
+
+    // perform actions
+    doLast {
+        jaxbTargetDir.mkdirs()
+
+        ant.taskdef(name: 'xjc', classname: 'com.sun.tools.xjc.XJCTask', classpath: configurations.jaxb.asPath)
+        ant.jaxbTargetDir = jaxbTargetDir
+
+        // ecommerce web service
+        ant.xjc(destdir: '${jaxbTargetDir}', package: 'com.aol.ecommerce', schema: 'src/main/resources/com/aol/ecommerce/ecommerce.xsd')
+
+    }
+
+}
+
+compileJava.dependsOn jaxb
+
+sourceSets {
+	main {
+		java.srcDir file("$buildDir/generated-src")
+	}
+}
+
