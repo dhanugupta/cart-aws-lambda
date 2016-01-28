@@ -39,7 +39,7 @@ Deployment
     Timeout : `30secs` to start with
     
     Note : 
-    1. Ensure your Lambda function is using the correct IAM role. The role must have the ability to write/read to DynamoDB and S3. 
+    1. Ensure your Lambda function is using the correct IAM role. The role must have the ability to write/read to DynamoDB. 
     2. All Lambda interactions are logged in Cloudwatch logs. View the logs for debugging. 
 
 2. The Lambda function handler tells Lambda what java method under `com.org.cart.router.RequestRouter` - 
