@@ -25,6 +25,24 @@ AWS DynamoDB
 Deployment
 > JAVA, Gradle, Jenkins Deployment
 
+### AWS DynamoDB
+
+1. Create Table on DynamoDB
+
+   	Name :  ‘cart’
+  
+    Partition Key : ‘loginId’ (String)
+    
+    Sort key : ‘sku’ (String)
+    
+    Read Capacity Units : 100
+    
+    Write Capacity Units : 50
+	
+ Note: If you want to read more on provisioned read/write capacities
+
+ http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html
+
 ### AWS Lambda
 1. Create a new Lambda function. As 
 
