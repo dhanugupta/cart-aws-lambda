@@ -11,6 +11,10 @@ AWS Lambda Cart Micro Service - Serverless REST API's
 
 ![Architecture](https://github.com/dhanugupta/cart-aws-lambda/blob/master/aws-lambda-cart-microservice.png?raw=true)
 
+## Presentation
+
+http://www.slideshare.net/dhanugupta/aws-lambda-cart-microservice-server-less
+
 ## Various components used in this example:
 
 AWS API Gateway
